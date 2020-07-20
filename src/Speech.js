@@ -31,7 +31,7 @@ const Speech = () => {
             } else{
                 console.log("stop listening....") //TODO: How to stop listening?
                 // let recorder = new MediaRecorder(stream);
-                stream.getAudioTracks().forEach(function(track){track.stop();});
+                // stream.getAudioTracks().forEach(function(track){track.stop();});
             }
         });
     }
