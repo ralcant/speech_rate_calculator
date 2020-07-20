@@ -22,17 +22,17 @@ const Speech = () => {
     }
     function getPitch(){ //from the example given in https://www.npmjs.com/package/pitchy
         navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
-            if (isActive){
+            // if (isActive){
                 let sourceNode = audioContext.createMediaStreamSource(stream);
                 sourceNode.connect(analyserNode);
                 const detector = PitchDetector.forFloat32Array(analyserNode.fftSize);
                 const input = new Float32Array(detector.inputLength);
                 updatePitch(analyserNode, detector, input, audioContext.sampleRate);
-            } else{
-                console.log("stop listening....") //TODO: How to stop listening?
+            // } else{
+                // console.log("stop listening....") //TODO: How to stop listening?
                 // let recorder = new MediaRecorder(stream);
                 // stream.getAudioTracks().forEach(function(track){track.stop();});
-            }
+            // }
         });
     }
 
