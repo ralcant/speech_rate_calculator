@@ -62,7 +62,7 @@ const Speech = () => {
         setClarity(0);
         setPitch(0);
     }
-    useEffect(()=>{ //some of this taken from //some of this taken from https://upmostly.com/tutorials/build-a-react-timer-component-using-hooks
+    useEffect(()=>{  //some of this taken from https://upmostly.com/tutorials/build-a-react-timer-component-using-hooks
         let timer = null;
         if (isActive){ //only update if it's listening
             timer = setInterval(()=>{
@@ -71,9 +71,13 @@ const Speech = () => {
             }, 1000)
         } else if (speech_duration !== 0 || restart_timer){ //if not active and duration is not 0
             clearInterval(timer);
+            stopListening();
         }
-        return () => clearInterval(timer);
-    }, [isActive, speech_duration])
+        return () => {
+            clearInterval(timer);
+            // stopListening();
+        }
+    },[isActive, speech_duration, restart_timer, pitch, clarity])
 
     function count(text){ //taken from https://stackoverflow.com/questions/18679576/counting-words-in-string 
         return text.length === 0 ? 0: text.trim().split(/\s+/).length;
