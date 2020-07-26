@@ -5,12 +5,12 @@ import Property from "./Property"
 
 // const ml5 = require('ml5');
 
-const Pitchfinder = require("pitchfinder");
-const detectPitch = Pitchfinder.YIN();
+// const Pitchfinder = require("pitchfinder");
+// const detectPitch = Pitchfinder.YIN();
 
 let audioContext = new (window.AudioContext || window.webkitAudioContext)();
 let analyserNode = audioContext.createAnalyser();
-let myArrayBuffer = audioContext.createBuffer(2, audioContext.sampleRate * 3, audioContext.sampleRate);
+// let myArrayBuffer = audioContext.createBuffer(2, audioContext.sampleRate * 3, audioContext.sampleRate);
 
 const Speech = () => { 
     let sourceNode;

@@ -19,7 +19,7 @@ function App() {
         >
           Learn React
         </a> */}
-        <script src="https://unpkg.com/ml5@0.__.3/dist/ml5.min.js"></script>
+        {/* <script src="https://unpkg.com/ml5@0.__.3/dist/ml5.min.js"></script> */}
       </header>
     </div>
   );
