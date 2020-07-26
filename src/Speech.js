@@ -21,14 +21,16 @@ const Speech = () => {
         let [p, c] = detector.findPitch(input, sampleRate);
         console.log("pitch: "+ p);
         console.log("clarity: "+c);
-        if (pitch == 0 && p == 0){
-            setPitch(1);
-        } else if (pitch == 1 && p == 0){
-            setPitch(0);
-        } else{
-            setPitch(p);
-            setClarity(c);
-        }
+        setPitch(p);
+        setClarity(c);
+        // if (pitch == 0 && p == 0){
+        //     setPitch(1);
+        // } else if (pitch == 1 && p == 0){
+        //     setPitch(0);
+        // } else{
+        //     setPitch(p);
+        //     setClarity(c);
+        // }
     }
     function getPitch(){ //from the example given in https://www.npmjs.com/package/pitchy
         // if (!sourceNode){
