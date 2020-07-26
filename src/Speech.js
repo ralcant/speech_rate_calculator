@@ -63,7 +63,7 @@ const Speech = () => {
         SpeechRecognition.stopListening();
         setIsActive(false);
 
-        if (!window.streamReference) {
+        if (window.streamReference) {
             console.log("trying to stop tracks...")
             window.streamReference.getAudioTracks().forEach(function(track) {
                 console.log("stopping track..")
