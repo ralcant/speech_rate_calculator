@@ -18,11 +18,17 @@ const Speech = () => {
     function updatePitch(analyserNode, detector, input, sampleRate) {
 
         analyserNode.getFloatTimeDomainData(input);
-        let [pitch, clarity] = detector.findPitch(input, sampleRate);
-        console.log("pitch: "+ pitch);
-        console.log("clarity: "+clarity);
-        setPitch(pitch);
-        setClarity(clarity);
+        let [p, c] = detector.findPitch(input, sampleRate);
+        console.log("pitch: "+ p);
+        console.log("clarity: "+c);
+        if (pitch == 0 && p == 0){
+            setPitch(1);
+        } else if (pitch == 1 && p == 0){
+            setPitch(0);
+        } else{
+            setPitch(p);
+            setClarity(c);
+        }
     }
     function getPitch(){ //from the example given in https://www.npmjs.com/package/pitchy
         // if (!sourceNode){
